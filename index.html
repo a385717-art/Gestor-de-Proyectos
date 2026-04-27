@@ -1,16 +1,42 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema de Gestión de Proyectos & Tareas</title>
+    <title>TaskFlow - Gestión de Proyectos</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <div id="app">
-        <h1>Sistema de Gestión de Proyectos</h1>
+    <div class="app-shell">
+        <header class="app-header">
+            <div>
+                <h1>TaskFlow</h1>
+                <p>Gestión de proyectos, tareas y progreso personal.</p>
+            </div>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema">Modo oscuro</button>
+        </header>
+
+        <nav class="app-nav" aria-label="Navegación principal">
+            <button data-section="dashboard" class="nav-button active">Dashboard</button>
+            <button data-section="projects" class="nav-button">Proyectos</button>
+            <button data-section="kanban" class="nav-button">Kanban</button>
+            <button data-section="calendar" class="nav-button">Calendario</button>
+            <button data-section="users" class="nav-button">Usuarios</button>
+            <button data-section="settings" class="nav-button">Configuración</button>
+        </nav>
+
+        <main class="app-main">
+            <section id="dashboard-section" class="app-section active"></section>
+            <section id="projects-section" class="app-section"></section>
+            <section id="kanban-section" class="app-section"></section>
+            <section id="calendar-section" class="app-section"></section>
+            <section id="users-section" class="app-section"></section>
+            <section id="settings-section" class="app-section"></section>
+        </main>
     </div>
-    
+
+    <div id="toast-container" class="toast-container" aria-live="polite"></div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script type="module" src="js/app.js"></script>
 </body>
 </html>
